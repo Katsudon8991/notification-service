@@ -64,7 +64,7 @@ public class FcmService {
                 .build();
 
         try {
-            BatchResponse response = FirebaseMessaging.getInstance().sendEachForMulticast(message);
+            BatchResponse response = FirebaseMessaging.getInstance().sendEachForMulticast(message, true);
             if (response.getFailureCount() > 0){
                 log.warn("FCM messages failed to send to {} devices.",response.getFailureCount());
             }

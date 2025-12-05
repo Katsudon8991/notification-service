@@ -2,6 +2,7 @@ package com.mudosa.notification.command.application;
 
 
 import com.mudosa.notification.command.domain.model.Notification;
+import com.mudosa.notification.command.domain.model.NotificationCategory;
 import com.mudosa.notification.command.domain.model.NotificationMetadata;
 import com.mudosa.notification.command.domain.repository.NotificationMetadataRepository;
 import com.mudosa.notification.command.domain.repository.NotificationRepository;
@@ -29,7 +30,7 @@ public class NotificationCommandService {
     public void createChatNotification(ChatNotificationCreatedEvent event){
 
         List<User> users = userRepository.findByIdIn(event.userIds());
-        NotificationMetadata notificationMetadata = notificationMetadataRepository.findByCategory("CHAT").orElseThrow(
+        NotificationMetadata notificationMetadata = notificationMetadataRepository.findByCategory(NotificationCategory.CHAT).orElseThrow(
                 ()-> new NoSuchElementException("NotificationMetadata not found")
                 );
 

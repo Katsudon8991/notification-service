@@ -5,8 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 @EnableJpaAuditing
 @EnableRedisRepositories(basePackages = "com.mudosa.notification.query.repository")
+@EnableJpaRepositories(basePackages = "com.mudosa")
 @SpringBootApplication
 public class NotificationApplication {
 

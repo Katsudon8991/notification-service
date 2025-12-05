@@ -30,7 +30,6 @@ public class NotificationMetadata {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="n_matadata_id")
     private Long nMetadataId;
 
     /**
@@ -60,9 +59,11 @@ public class NotificationMetadata {
     @Column(name="notification_url",nullable = false, length=255)
     private String url;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="notification_category",nullable = false)
     private NotificationCategory category;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="notification_type",nullable = false)
     private NotificationType type;
 
