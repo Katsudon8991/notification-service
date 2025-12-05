@@ -42,3 +42,5 @@ out/
 ### environment file ###
 .env
 fdbdproject.json
+
+.DS_Store
