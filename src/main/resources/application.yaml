@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: notification
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sinsang_db_50k?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+fcm:
+  service-account-file: fdbdproject.json
+  topic-name: fdbdMessage
+  project-id: fdbdproject
